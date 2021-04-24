@@ -211,4 +211,7 @@ MonoBehaviour:
   currentState: 3
   UIButtonPressEvent: {fileID: 0}
   MainMenuPlayButtonEvent: {fileID: 0}
+  MainMenuOptionsButtonEvent: {fileID: 0}
+  ESCKeyPressEvent: {fileID: 0}
+  MusicOnOffButtonEvent: {fileID: 0}
   delay: 1

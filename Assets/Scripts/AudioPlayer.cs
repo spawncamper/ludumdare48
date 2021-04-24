@@ -6,6 +6,8 @@ public class AudioPlayer : MonoBehaviour
 
     AudioSource audioSource;
 
+    bool isMusicOn = true;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -14,5 +16,21 @@ public class AudioPlayer : MonoBehaviour
     public void PlayOneShotMenuButtonClick()
     {
         audioSource.PlayOneShot(menuButtonClick);
+    }
+
+    public void OptionsMenuMusicOnOffButton()
+    {
+        if (isMusicOn == false)
+        {
+            print("[AudioPlayer] PlayMainMenuMusic() if (isMusicOn == false)");
+            audioSource.Play();
+            isMusicOn = true;
+        }
+        else if (isMusicOn == true)
+        {
+            print("[AudioPlayer] PlayMainMenuMusic() if (isMusicOn == true)");
+            audioSource.Stop();
+            isMusicOn = false;
+        }
     }
 }
