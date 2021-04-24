@@ -56,6 +56,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -67,6 +69,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -79,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3136605153127355645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,10 +158,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   GraphTimeMultiplier: 15
   GraphIntensityMultiplier: 1
-  IsLoop: 0
-  MaterialNumber: 0
-  UseSharedMaterial: 0
-  UseSharedRenderers: []
   TimeDelay: 0
 --- !u!114 &3136605153127355642
 MonoBehaviour:
@@ -196,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 3136605153214515430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3136605153127355643}
   m_Father: {fileID: 0}
