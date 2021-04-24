@@ -12,14 +12,14 @@ public class ObjectPool : MonoBehaviour
         PopulatePool();
     }
 
-    public GameObject EnableObjectInPool(float zOffset = 0f)
+    public GameObject EnableObjectInPool(float xOffset, float yOffset, float zOffset)
     {
         //Find the next available object in the pool and try to enable it
         for (int i = 0; i < pool.Length; i++)
         {
             if (!pool[i].activeInHierarchy)
             {
-                pool[i].transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + zOffset);
+                pool[i].transform.position = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
                 pool[i].SetActive(true);
                 return pool[i];
             }
