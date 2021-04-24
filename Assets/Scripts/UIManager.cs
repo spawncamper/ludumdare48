@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] UIstateSelection currentState;
 
+    //EVENTS
+    [SerializeField] GameEvent UIButtonPressEvent;
+    [SerializeField] GameEvent MainMenuPlayButtonEvent;
+
     // FADE CANVAS
     Animator animator;
     [SerializeField] float delay = 1f;
@@ -39,5 +43,12 @@ public class UIManager : MonoBehaviour
         {
             child.gameObject.SetActive(_bool);
         }
+    }
+
+    // MAIN MENU
+    public void PlayButton()
+    {
+        UIButtonPressEvent.Raise();
+        MainMenuPlayButtonEvent.Raise();
     }
 }
