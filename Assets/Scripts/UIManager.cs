@@ -48,7 +48,11 @@ public class UIManager : MonoBehaviour
     // MAIN MENU
     public void PlayButton()
     {
-        UIButtonPressEvent.Raise();
         MainMenuPlayButtonEvent.Raise();
+    }
+
+    public void UIButtonPress()
+    {
+        UIButtonPressEvent.Raise();
     }
 }

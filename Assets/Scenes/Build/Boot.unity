@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f0fe7f9a602c44696356434bf879ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuButtonClick: {fileID: 8300000, guid: 8203ff6a784c011469739e959d3fb1cf, type: 3}
 --- !u!4 &2104097479
 Transform:
   m_ObjectHideFlags: 0
@@ -214,7 +215,19 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: 8b51720ec87a088438695a0420989399, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2104097478}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayOneShotMenuButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2104097482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,11 +266,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: df2163357df38064e856403cc854d3db, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
