@@ -192,3 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329497f65a37fe5408182976ac37dceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bootScene: Boot
+  mainMenu: MainMenu
+  gameScene: Game
+  delay: 1
