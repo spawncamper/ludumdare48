@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     {
         if (currentState == UIstateSelection.FadeCanvas)
         {
+            ChildrenSetActive(true);
+
             animator = GetComponentInChildren<Animator>();
             StartCoroutine(FadeInCoroutine());
         }
@@ -28,9 +30,14 @@ public class UIManager : MonoBehaviour
         animator.enabled = true;
         yield return new WaitForSeconds(delay);
 
+        ChildrenSetActive(false);
+    }
+
+    void ChildrenSetActive(bool _bool)
+    {
         foreach (Transform child in transform)
         {
-            child.gameObject.SetActive(false);
+            child.gameObject.SetActive(_bool);
         }
     }
 }
