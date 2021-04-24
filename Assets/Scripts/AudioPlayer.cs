@@ -29,6 +29,7 @@ public class AudioPlayer : MonoBehaviour
         else if (isMusicOn == true)
         {
             print("[AudioPlayer] PlayMainMenuMusic() if (isMusicOn == true)");
+            audioSource.PlayOneShot(menuButtonClick);
             audioSource.Stop();
             isMusicOn = false;
         }

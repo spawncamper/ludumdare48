@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     enum UIstateSelection
     {
-        MessageCanvas, GameOverMenu, MainMenu, FadeCanvas, OptionsMenu
+        MessageCanvas, GameOverMenu, MainMenu, FadeCanvas, OptionsMenu, CreditsMenu
     }
 
     [SerializeField] UIstateSelection currentState;
@@ -14,12 +15,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameEvent UIButtonPressEvent;
     [SerializeField] GameEvent MainMenuPlayButtonEvent;
     [SerializeField] GameEvent MainMenuOptionsButtonEvent;
+    [SerializeField] GameEvent MainMenuCreditsButtonEvent;
     [SerializeField] GameEvent ESCKeyPressEvent;
     [SerializeField] GameEvent MusicOnOffButtonEvent;
 
     // FADE CANVAS
     Animator animator;
     [SerializeField] float delay = 1f;
+
+    // CREDITS MENU
+    [SerializeField] TMP_Text creditsText;
+    string designText = "@MITCH_HEISENBERG";
+    string musicText = "@TroyanskiyYaroslav";
 
     private void Start()
     {
@@ -31,6 +38,10 @@ public class UIManager : MonoBehaviour
             StartCoroutine(FadeInCoroutine());
         }
         if (currentState == UIstateSelection.OptionsMenu)
+        {
+            ChildrenSetActive(false);
+        }
+        if (currentState == UIstateSelection.CreditsMenu)
         {
             ChildrenSetActive(false);
         }
@@ -89,6 +100,11 @@ public class UIManager : MonoBehaviour
         MainMenuOptionsButtonEvent.Raise();
     }
 
+    public void MainMenuCreditsButton()
+    {
+        MainMenuCreditsButtonEvent.Raise();
+    }
+
     // OPTIONS MENU
     public void OptionsMenuMusicOnOffButton()
     {
@@ -98,5 +114,16 @@ public class UIManager : MonoBehaviour
         {
             MusicOnOffButtonEvent.Raise();
         }
+    }
+
+    // CREDITS MENU
+    public void CreditsMenuDesignButton()
+    {
+        creditsText.text = designText;
+    }
+
+    public void CreditsMenuMusicButton()
+    {
+        creditsText.text = musicText;
     }
 }
