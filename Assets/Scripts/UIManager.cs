@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     enum UIstateSelection
     {
-        MessageCanvas, GameOverMenu, MainMenu, FadeCanvas, OptionsMenu, CreditsMenu
+        MainMenu, FadeCanvas, OptionsMenu, CreditsMenu, PauseMenu
     }
 
     [SerializeField] UIstateSelection currentState;
@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameEvent MainMenuCreditsButtonEvent;
     [SerializeField] GameEvent ESCKeyPressEvent;
     [SerializeField] GameEvent MusicOnOffButtonEvent;
+    [SerializeField] GameEvent PauseMenuMainMenuEvent;
 
     // FADE CANVAS
     Animator animator;
@@ -28,28 +29,39 @@ public class UIManager : MonoBehaviour
     string designText = "@MITCH_HEISENBERG";
     string musicText = "@TroyanskiyYaroslav";
 
+    // PAUSE MENU
+    bool isPauseMenuOpen = false;
+
     private void Start()
     {
         if (currentState == UIstateSelection.FadeCanvas)
         {
-            ChildrenSetActive(true);
+//            MenuSetActive();
 
             animator = GetComponentInChildren<Animator>();
             StartCoroutine(FadeInCoroutine());
         }
         if (currentState == UIstateSelection.OptionsMenu)
         {
-            ChildrenSetActive(false);
+            MenuSetInactive();
         }
         if (currentState == UIstateSelection.CreditsMenu)
         {
-            ChildrenSetActive(false);
+            MenuSetInactive();
+        }
+        if (currentState == UIstateSelection.PauseMenu)
+        {
+            MenuSetInactive();
         }
     }
 
     private void Update()
     {
         if (Input.GetKeyDown("escape") && currentState == UIstateSelection.OptionsMenu)
+        {
+            ESCKeyPressEvent.Raise();
+        }
+        else if (Input.GetKeyDown("escape") && currentState == UIstateSelection.PauseMenu)
         {
             ESCKeyPressEvent.Raise();
         }
@@ -83,10 +95,14 @@ public class UIManager : MonoBehaviour
     // FADE CANVAS
     IEnumerator FadeInCoroutine()
     {
+        print("[UIManager] FadeInCoroutine start");
+        
         animator.enabled = true;
         yield return new WaitForSeconds(delay);
 
         ChildrenSetActive(false);
+
+        print("[UIManager] FadeInCoroutine finish");
     }
 
     // MAIN MENU
@@ -110,7 +126,7 @@ public class UIManager : MonoBehaviour
     {
         UIButtonPressEvent.Raise();
 
-        if (currentState == UIstateSelection.OptionsMenu)
+        if (currentState == UIstateSelection.OptionsMenu || currentState == UIstateSelection.PauseMenu)
         {
             MusicOnOffButtonEvent.Raise();
         }
@@ -125,5 +141,32 @@ public class UIManager : MonoBehaviour
     public void CreditsMenuMusicButton()
     {
         creditsText.text = musicText;
+    }
+
+    // PAUSE MENU
+    public void PauseMenuOnESCPress()
+    {
+        if (isPauseMenuOpen == false && currentState == UIstateSelection.PauseMenu)
+        {
+            MenuSetActive();
+            isPauseMenuOpen = true;
+            Time.timeScale = 0;
+        }
+        else if (isPauseMenuOpen == true && currentState == UIstateSelection.PauseMenu)
+        {
+            MenuSetInactive();
+            isPauseMenuOpen = false;
+            Time.timeScale = 1;
+        }
+        else if (currentState == UIstateSelection.MainMenu)
+        {
+            print("[UIManager] OnESCPressEventMethod() Quit application here from main menu");
+            // ADD APPLICATION QUIT METHOD HERE
+        }
+    }
+
+    public void PauseMenuMainMenuButton()
+    {
+        PauseMenuMainMenuEvent.Raise();
     }
 }

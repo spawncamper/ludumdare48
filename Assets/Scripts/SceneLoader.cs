@@ -75,6 +75,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        print("[SceneLoader] LoadMainMenu()");
         SceneManager.LoadScene(mainMenu);
     }
 

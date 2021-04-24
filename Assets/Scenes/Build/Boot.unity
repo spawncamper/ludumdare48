@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 2104097482}
   - component: {fileID: 2104097481}
   - component: {fileID: 2104097484}
+  - component: {fileID: 2104097485}
   m_Layer: 0
   m_Name: Core
   m_TagString: Untagged
@@ -372,6 +373,34 @@ MonoBehaviour:
       - m_Target: {fileID: 2104097478}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
         m_MethodName: OptionsMenuMusicOnOffButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2104097485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104097476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 909cedc141ab00346a2a9a99132aab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d44024bda48353443b24c03a9cff00ec, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2104097480}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

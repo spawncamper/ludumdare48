@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa686a85b1caafd4abc8c4eed0fc5130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 2
+  currentState: 0
   UIButtonPressEvent: {fileID: 11400000, guid: 8b51720ec87a088438695a0420989399, type: 2}
   MainMenuPlayButtonEvent: {fileID: 11400000, guid: 56b4ce331c40bdf42b0ae4443b0ae0a3, type: 2}
   MainMenuOptionsButtonEvent: {fileID: 11400000, guid: 40d1b574e6a733a42b2f2be3660b3a99, type: 2}

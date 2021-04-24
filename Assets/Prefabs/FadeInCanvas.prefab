@@ -208,10 +208,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa686a85b1caafd4abc8c4eed0fc5130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 3
+  currentState: 1
   UIButtonPressEvent: {fileID: 0}
   MainMenuPlayButtonEvent: {fileID: 0}
   MainMenuOptionsButtonEvent: {fileID: 0}
+  MainMenuCreditsButtonEvent: {fileID: 0}
   ESCKeyPressEvent: {fileID: 0}
   MusicOnOffButtonEvent: {fileID: 0}
   delay: 1
+  creditsText: {fileID: 0}
