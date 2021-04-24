@@ -5,7 +5,7 @@ public class UIManager : MonoBehaviour
 {
     enum UIstateSelection
     {
-        MessageCanvas, GameOverMenu, MainMenu, FadeCanvas
+        MessageCanvas, GameOverMenu, MainMenu, FadeCanvas, OptionsMenu
     }
 
     [SerializeField] UIstateSelection currentState;
@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     //EVENTS
     [SerializeField] GameEvent UIButtonPressEvent;
     [SerializeField] GameEvent MainMenuPlayButtonEvent;
+    [SerializeField] GameEvent MainMenuOptionsButtonEvent;
+    [SerializeField] GameEvent ESCKeyPressEvent;
+    [SerializeField] GameEvent MusicOnOffButtonEvent;
 
     // FADE CANVAS
     Animator animator;
@@ -27,16 +30,21 @@ public class UIManager : MonoBehaviour
             animator = GetComponentInChildren<Animator>();
             StartCoroutine(FadeInCoroutine());
         }
+        if (currentState == UIstateSelection.OptionsMenu)
+        {
+            ChildrenSetActive(false);
+        }
     }
 
-    IEnumerator FadeInCoroutine()
+    private void Update()
     {
-        animator.enabled = true;
-        yield return new WaitForSeconds(delay);
-
-        ChildrenSetActive(false);
+        if (Input.GetKeyDown("escape") && currentState == UIstateSelection.OptionsMenu)
+        {
+            ESCKeyPressEvent.Raise();
+        }
     }
 
+    // GENERAL SHARED METHODS
     void ChildrenSetActive(bool _bool)
     {
         foreach (Transform child in transform)
@@ -45,14 +53,50 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void UIButtonPress()
+    {
+        UIButtonPressEvent.Raise();
+    }
+
+
+    public void MenuSetActive()
+    {
+        ChildrenSetActive(true);
+    }
+
+    public void MenuSetInactive()
+    {
+        ChildrenSetActive(false);
+    }
+
+    // FADE CANVAS
+    IEnumerator FadeInCoroutine()
+    {
+        animator.enabled = true;
+        yield return new WaitForSeconds(delay);
+
+        ChildrenSetActive(false);
+    }
+
     // MAIN MENU
-    public void PlayButton()
+    public void MainMenuPlayButton()
     {
         MainMenuPlayButtonEvent.Raise();
     }
 
-    public void UIButtonPress()
+    public void MainMenuOptionsButton()
+    {
+        MainMenuOptionsButtonEvent.Raise();
+    }
+
+    // OPTIONS MENU
+    public void OptionsMenuMusicOnOffButton()
     {
         UIButtonPressEvent.Raise();
+
+        if (currentState == UIstateSelection.OptionsMenu)
+        {
+            MusicOnOffButtonEvent.Raise();
+        }
     }
 }

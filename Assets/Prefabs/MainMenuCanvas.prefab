@@ -502,7 +502,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9079716970509162416}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlayButton
+        m_MethodName: MainMenuPlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1139,6 +1139,7 @@ MonoBehaviour:
   currentState: 2
   UIButtonPressEvent: {fileID: 11400000, guid: 8b51720ec87a088438695a0420989399, type: 2}
   MainMenuPlayButtonEvent: {fileID: 11400000, guid: 56b4ce331c40bdf42b0ae4443b0ae0a3, type: 2}
+  MainMenuOptionsButtonEvent: {fileID: 11400000, guid: 40d1b574e6a733a42b2f2be3660b3a99, type: 2}
   delay: 1
 --- !u!1 &9079716970509162423
 GameObject:
@@ -1406,6 +1407,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9079716970509162416}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: MainMenuOptionsButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9079716970509162427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,8 +1493,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4289521407
+  m_fontColor: {r: 1, g: 0.9019608, b: 0.6745098, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1504,7 +1517,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
