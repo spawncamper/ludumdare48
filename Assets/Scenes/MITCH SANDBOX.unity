@@ -286,7 +286,10 @@ MonoBehaviour:
   tileHeight: 1
   cutoff: 10
   poolSize: 40
-  objectPrefab: {fileID: 1187657120884034148, guid: db392a1df071f80409653b64d961ae8a, type: 3}
+  objectPrefabs:
+  - {fileID: 4469845300878348501, guid: db392a1df071f80409653b64d961ae8a, type: 3}
+  - {fileID: 5421747625565600241, guid: a8972ab535466f04c911397881d0ed0c, type: 3}
+  - {fileID: 4989599472426571239, guid: b20ba60945737a24d9891ff20b666b8c, type: 3}
 --- !u!1 &1444140314
 GameObject:
   m_ObjectHideFlags: 0
