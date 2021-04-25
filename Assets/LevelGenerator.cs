@@ -10,14 +10,13 @@ public class LevelGenerator : MonoBehaviour
 
     float zeroPosition;
 
-    GameObject[] activePool;
     GameObject[] tilePool;
 
     GameObject player;
 
     private void Awake()
     {
-        activePool = PopulatePool(poolSize, tilePrefabs);
+        tilePool = PopulatePool(poolSize, tilePrefabs);
     }
 
     void Start()
@@ -52,7 +51,7 @@ public class LevelGenerator : MonoBehaviour
 
     void UpdateTilePositions(float zeroPosition)
     {
-        foreach (GameObject tile in activePool)
+        foreach (GameObject tile in tilePool)
         {
             float distanceToPlayer = player.transform.position.y - tile.transform.position.y;
 
@@ -68,10 +67,7 @@ public class LevelGenerator : MonoBehaviour
     // Enables a random object in the pool
     void GenerateTile(float xOffset, float yOffset, float zOffset)
     {
-        //Select a tile from a random pool
-        int selectedPool = Random.Range(0, activePool.Length);
-
-        GameObject poolObject = EnableObjectInPool(xOffset, yOffset, zOffset);
+        GameObject poolObject = EnableObjectInPool(tilePool, xOffset, yOffset, zOffset);
 
         if (poolObject == null)
         {
@@ -82,32 +78,32 @@ public class LevelGenerator : MonoBehaviour
     GameObject[] PopulatePool(int _poolSize, GameObject[] prefabs)
     {
         //Create the pool
-        activePool = new GameObject[_poolSize];
+        GameObject[] _Pool = new GameObject[_poolSize];
 
         //Instantiate the objects into the pool and disable them
-        for (int i = 0; i < activePool.Length; i++)
+        for (int i = 0; i < _Pool.Length; i++)
         {
-            activePool[i] = Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform);
-            activePool[i].SetActive(false);
+            _Pool[i] = Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform);
+            _Pool[i].SetActive(false);
         }
 
-        return activePool;
+        return _Pool;
     }
 
     // Goes through each object in pool, if not active, then SetActive at given offset
-    public GameObject EnableObjectInPool(float xOffset, float yOffset, float zOffset)
+    public GameObject EnableObjectInPool(GameObject[] _Pool, float xOffset, float yOffset, float zOffset)
     {
         //Find the next available object in the pool and try to enable it
-        for (int i = 0; i < activePool.Length; i++)
+        for (int i = 0; i < _Pool.Length; i++)
         {
-            if (!activePool[i].activeInHierarchy)
+            if (!_Pool[i].activeInHierarchy)
             {
-                activePool[i].transform.position = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
-                activePool[i].SetActive(true);
+                _Pool[i].transform.position = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
+                _Pool[i].SetActive(true);
 
-                print(i + activePool[i].transform.position.y);
+                print(i + _Pool[i].transform.position.y);
 
-                return activePool[i];
+                return _Pool[i];
             }
         }
         return null;
