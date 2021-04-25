@@ -62,29 +62,8 @@ public class LevelGenerator : MonoBehaviour
             {
                 tile.SetActive(false);
 
-                GenerateTile(0, Mathf.Round(zeroPosition - tileHeight * worldSize), 0);
+                EnableObjectInPool(tilePool, 0, Mathf.Round(zeroPosition - tileHeight * worldSize), 0);
             }
-        }
-    }
-
-    // Enables a random object in the pool
-    void GenerateTile(float xOffset, float yOffset, float zOffset)
-    {
-        GameObject poolObject = EnableObjectInPool(tilePool, xOffset, yOffset, zOffset);
-
-        if (poolObject == null)
-        {
-            Debug.LogError("[LevelGenerator] GenerateTile poolObject == null");
-        }    
-    }
-
-    void GenerateMine(float xOffset, float yOffset, float zOffset)
-    {
-        GameObject poolObject = EnableObjectInPool(minePool, xOffset, yOffset, zOffset);
-
-        if (poolObject == null)
-        {
-            Debug.LogError("[LevelGenerator] GenerateTile poolObject == null");
         }
     }
 
