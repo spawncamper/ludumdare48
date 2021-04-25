@@ -16,7 +16,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Awake()
     {
-        activePool = PopulatePool();
+        activePool = PopulatePool(poolSize);
     }
 
     void Start()
@@ -78,10 +78,10 @@ public class LevelGenerator : MonoBehaviour
         }    
     }
 
-    GameObject[] PopulatePool()
+    GameObject[] PopulatePool(int _poolSize)
     {
         //Create the pool
-        activePool = new GameObject[poolSize];
+        activePool = new GameObject[_poolSize];
 
         //Instantiate the objects into the pool and disable them
         for (int i = 0; i < activePool.Length; i++)
