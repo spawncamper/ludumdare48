@@ -5,18 +5,19 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] int worldSize = 10;
     [SerializeField] float tileHeight = 1f;
     [SerializeField] int poolSize;
-    [SerializeField] GameObject[] objectPrefabs;
-    [SerializeField] GameObject mine;
+    [SerializeField] GameObject[] tilePrefabs;
+    [SerializeField] GameObject[] minePrefabs;
 
     float zeroPosition;
 
     GameObject[] activePool;
+    GameObject[] tilePool;
 
     GameObject player;
 
     private void Awake()
     {
-        activePool = PopulatePool(poolSize, objectPrefabs);
+        activePool = PopulatePool(poolSize, tilePrefabs);
     }
 
     void Start()

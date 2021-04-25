@@ -320,11 +320,11 @@ MonoBehaviour:
   worldSize: 5
   tileHeight: 5
   poolSize: 20
-  objectPrefabs:
+  tilePrefabs:
   - {fileID: 6431902392674196517, guid: ba29802f4cc1de04f989ccff31fe6b16, type: 3}
   - {fileID: 1920558250124204106, guid: d5bca87f14fe8374bb364f886647e03c, type: 3}
   - {fileID: 6301335533361203848, guid: 771dea129c37cb04d9a3da54e832d5c6, type: 3}
-  mine: {fileID: 0}
+  minePrefabs: []
 --- !u!1 &420726849
 GameObject:
   m_ObjectHideFlags: 0
