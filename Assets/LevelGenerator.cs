@@ -4,19 +4,22 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] int worldSize = 10;
     [SerializeField] float tileHeight = 1f;
-    [SerializeField] int poolSize;
+    [SerializeField] int tilePoolSize;
+    [SerializeField] int minePoolSize;
     [SerializeField] GameObject[] tilePrefabs;
     [SerializeField] GameObject[] minePrefabs;
 
     float zeroPosition;
 
     GameObject[] tilePool;
+    GameObject[] minePool;
 
     GameObject player;
 
     private void Awake()
     {
-        tilePool = PopulatePool(poolSize, tilePrefabs);
+        tilePool = PopulatePool(tilePoolSize, tilePrefabs);
+        minePool = PopulatePool(minePoolSize, minePrefabs);
     }
 
     void Start()
@@ -31,7 +34,7 @@ public class LevelGenerator : MonoBehaviour
         //Sets up the initial tiles in the world.
         for (int i = -worldSize; i < 0; i++)
         {
-            GenerateTile(0, tileHeight * i, 0);
+            EnableObjectInPool(tilePool, 0, tileHeight * i, 0);
         }
 
         zeroPosition = transform.position.y;
@@ -75,6 +78,16 @@ public class LevelGenerator : MonoBehaviour
         }    
     }
 
+    void GenerateMine(float xOffset, float yOffset, float zOffset)
+    {
+        GameObject poolObject = EnableObjectInPool(minePool, xOffset, yOffset, zOffset);
+
+        if (poolObject == null)
+        {
+            Debug.LogError("[LevelGenerator] GenerateTile poolObject == null");
+        }
+    }
+
     GameObject[] PopulatePool(int _poolSize, GameObject[] prefabs)
     {
         //Create the pool
@@ -106,6 +119,9 @@ public class LevelGenerator : MonoBehaviour
                 return _Pool[i];
             }
         }
+
+        Debug.LogError("[LevelGenerator] EnableObjectInPool returns null");
+
         return null;
     }
 }
