@@ -16,7 +16,8 @@ public class SubController : MonoBehaviour
     private float rotationSpeed = 5f;
     [SerializeField]
     private Vector3 waterLiftForce;
-
+    [SerializeField]
+    private float selfRightingTorque = 1f;
 
     [SerializeField][Tooltip("Caps the allowed speed you can reach.")]
     private float maxSpeed = 30f;
@@ -25,12 +26,6 @@ public class SubController : MonoBehaviour
 
     [Header("References")]
 
-    [SerializeField]
-    private SubEmgine eng_h;
-    [SerializeField]
-    private SubEmgine eng_v;
-    [SerializeField]
-    private rudderController rud_c;
     private Rigidbody rBody;
 
 
@@ -47,7 +42,16 @@ public class SubController : MonoBehaviour
     #region Movement
     private void ApplyMovement()
     {
-        rBody.AddRelativeTorque(new Vector3(0, inputMoveDirection.x * rotationSpeed, 0) * Time.fixedDeltaTime);
+        float angle = Vector3.Angle(transform.up, Vector3.up);
+        Vector3 selfRightCompensation = Vector3.zero;
+
+        if(angle > 0.001)
+        {
+            var axis = Vector3.Cross(transform.up, Vector3.up);
+            selfRightCompensation = axis * angle * selfRightingTorque;
+        }
+
+        rBody.AddTorque((new Vector3(0, inputMoveDirection.x * rotationSpeed, 0) * Time.fixedDeltaTime) + selfRightCompensation);
 
         Vector3 accelerationForce = inputMoveDirection;
         accelerationForce.x = 0f;
@@ -56,8 +60,8 @@ public class SubController : MonoBehaviour
 
         rBody.AddRelativeForce((accelerationForce + waterLiftForce) * Time.fixedDeltaTime);
 
-        // if(rBody.velocity.sqrMagnitude > maxSpeed * maxSpeed)
-        //     rBody.velocity = rBody.velocity.normalized * maxSpeed;
+        if(rBody.velocity.sqrMagnitude > maxSpeed * maxSpeed)
+            rBody.velocity = rBody.velocity.normalized * maxSpeed;
     }
     #endregion
 

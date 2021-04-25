@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SubEmgine : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class SubEmgine : MonoBehaviour
     private Vector3 rotationSpeed = Vector3.up;
     private Vector3 spin;
 
-    public void SetSpinSpeed (float speed)
+    public void SetSpinSpeed (InputAction.CallbackContext context)
     {
-        spin = speed * rotationSpeed;
+        spin = context.ReadValue<Vector2>().magnitude * rotationSpeed;
     }
 
     void Update()
