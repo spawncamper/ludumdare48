@@ -55,6 +55,6 @@ Material:
     m_Colors:
     - _CameraFadeDistances: {r: 1, g: 0.5, b: 1, a: 3}
     - _Color: {r: 2.1185474, g: 0, b: 0.08873497, a: 1}
-    - _DetailScrollSpeed: {r: 5, g: 3, b: 3, a: 5}
+    - _DetailScrollSpeed: {r: 1, g: 1, b: 1, a: 1}
     - _SceneFadeDistances: {r: 0.36, g: 2.7027028, b: 0.36, a: 0.73}
   m_BuildTextureStacks: []
