@@ -4,9 +4,9 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] int worldSize = 10;
     [SerializeField] float tileHeight = 1f;
-    [SerializeField] float cutoff = 10f;
     [SerializeField] int poolSize;
     [SerializeField] GameObject[] objectPrefabs;
+    [SerializeField] GameObject mine;
 
     float zeroPosition;
 
