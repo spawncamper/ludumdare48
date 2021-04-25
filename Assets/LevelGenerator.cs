@@ -60,11 +60,21 @@ public class LevelGenerator : MonoBehaviour
 
             if (distanceToPlayer < 0 && tile.activeInHierarchy)
             {
+                // Disable the topmost tile
                 tile.SetActive(false);
 
+                // Enable a tile on the bottom
                 EnableObjectInPool(tilePool, 0, Mathf.Round(zeroPosition - tileHeight * worldSize), 0);
+
+                //Spawn a mine at the bottom
+                SpawnMine(zeroPosition);
             }
         }
+    }
+
+    void SpawnMine(float _zeroPosition)
+    {
+        EnableObjectInPool(minePool, 0, Mathf.Round(_zeroPosition - tileHeight * worldSize), 0);
     }
 
     GameObject[] PopulatePool(int _poolSize, GameObject[] prefabs)
