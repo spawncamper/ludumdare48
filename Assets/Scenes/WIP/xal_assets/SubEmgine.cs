@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class SubEmgine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private float spin = 0f;
-    public float rotate_coeff = 2f;
-    private Vector3 rotationVector;
-    void Start()
-    {
-        rotationVector = new Vector3(0, 0, 0);
-    }
-
-    // Update is called once per frame
+    [SerializeField]
+    private Vector3 rotationSpeed = Vector3.up;
+    private Vector3 spin;
 
     public void SetSpinSpeed (float speed)
     {
-        spin = speed * rotate_coeff;
-        rotationVector = new Vector3(0, spin, 0);
+        spin = speed * rotationSpeed;
     }
 
     void Update()
     {
-        transform.Rotate(rotationVector);
+        transform.Rotate(spin * Time.deltaTime);
     }
 }
