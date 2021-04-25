@@ -4,8 +4,11 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] int worldSize = 10;
     [SerializeField] float tileHeight = 1f;
+    [SerializeField] float cutoff = 10f;
     [SerializeField] int poolSize;
-    [SerializeField] GameObject objectPrefab;
+    [SerializeField] GameObject[] objectPrefabs;
+
+    float zeroPosition;
 
     GameObject[] activePool;
 
@@ -19,31 +22,55 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player == null)
+        {
+            Debug.LogError("[LevelGenerator] Start() player == null");
+        }
         
         //Sets up the initial tiles in the world.
-        for (int i = - Mathf.RoundToInt(worldSize/2); i < Mathf.RoundToInt(worldSize / 2); i++)
+        for (int i = -worldSize; i < 0; i++)
         {
-            GenerateTile(tileHeight * i);
+            GenerateTile(0, tileHeight * i, 0);
         }
+
+        zeroPosition = transform.position.y;
     }
 
     private void Update()
     {
+        float distanceToPlayer = zeroPosition - player.transform.position.y;
         
+        if (distanceToPlayer > tileHeight)
+        {
+            zeroPosition = player.transform.position.y;
+
+            UpdateTilePositions(zeroPosition);
+        }
     }
 
-    float DistanceToPlayer()
+    void UpdateTilePositions(float zeroPosition)
     {
-        float distanceToPlayer = transform.position.y - player.transform.position.y;
-        return distanceToPlayer;
+        foreach (GameObject tile in activePool)
+        {
+            float distanceToPlayer = player.transform.position.y - tile.transform.position.y;
+
+            if (distanceToPlayer < 0 && tile.activeInHierarchy)
+            {
+                tile.SetActive(false);
+
+                GenerateTile(0, Mathf.Round(zeroPosition - tileHeight * worldSize), 0);
+            }
+        }
     }
 
-    void GenerateTile(float yOffset)
+    // Enables a random object in the pool
+    void GenerateTile(float xOffset, float yOffset, float zOffset)
     {
         //Select a tile from a random pool
         int selectedPool = Random.Range(0, activePool.Length);
 
-        GameObject poolObject = EnableObjectInPool(0, yOffset, 0);
+        GameObject poolObject = EnableObjectInPool(xOffset, yOffset, zOffset);
 
         if (poolObject == null)
         {
@@ -59,13 +86,14 @@ public class LevelGenerator : MonoBehaviour
         //Instantiate the objects into the pool and disable them
         for (int i = 0; i < activePool.Length; i++)
         {
-            activePool[i] = Instantiate(objectPrefab, transform);
+            activePool[i] = Instantiate(objectPrefabs[Random.Range(0, objectPrefabs.Length)], transform);
             activePool[i].SetActive(false);
         }
 
         return activePool;
     }
 
+    // Goes through each object in pool, if not active, then SetActive at given offset
     public GameObject EnableObjectInPool(float xOffset, float yOffset, float zOffset)
     {
         //Find the next available object in the pool and try to enable it
@@ -75,6 +103,9 @@ public class LevelGenerator : MonoBehaviour
             {
                 activePool[i].transform.position = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
                 activePool[i].SetActive(true);
+
+                print(i + activePool[i].transform.position.y);
+
                 return activePool[i];
             }
         }
