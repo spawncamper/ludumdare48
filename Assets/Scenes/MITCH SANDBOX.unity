@@ -327,6 +327,9 @@ MonoBehaviour:
   - {fileID: 6301335533361203848, guid: 771dea129c37cb04d9a3da54e832d5c6, type: 3}
   minePrefabs:
   - {fileID: 8904231039794542918, guid: 84611ab40f0c70547927bf2a3390c417, type: 3}
+  mineSpawnChance: 75
+  offsetMin: -20
+  offsetMax: 20
 --- !u!1 &671469183
 GameObject:
   m_ObjectHideFlags: 3
@@ -623,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10749bccb0d30048b95f5b12bde2c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
 --- !u!1 &1748693921
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,11 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] GameObject[] tilePrefabs;
     [SerializeField] GameObject[] minePrefabs;
 
+    [Range(0.0f, 100.0f)]
+    [SerializeField] float mineSpawnChance = 20f;
+    [SerializeField] float offsetMin = -20f;
+    [SerializeField] float offsetMax = 20f;
+
     float zeroPosition;
 
     GameObject[] tilePool;
@@ -74,7 +79,15 @@ public class LevelGenerator : MonoBehaviour
 
     void SpawnMine(float _zeroPosition)
     {
-        EnableObjectInPool(minePool, 0, Mathf.Round(_zeroPosition - tileHeight * worldSize), 0);
+        float spawnChance = Random.Range(0, 100);
+
+        float xOffset = Random.Range(offsetMin, offsetMax);
+        float zOffset = Random.Range(offsetMin, offsetMax);
+
+        if (spawnChance < mineSpawnChance)
+        {
+            EnableObjectInPool(minePool, xOffset, Mathf.Round(_zeroPosition - tileHeight * worldSize), zOffset);
+        }
     }
 
     GameObject[] PopulatePool(int _poolSize, GameObject[] prefabs)
@@ -109,7 +122,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        Debug.LogError("[LevelGenerator] EnableObjectInPool returns null");
+        Debug.LogError("[LevelGenerator] EnableObjectInPool returns null in pool " + _Pool);
 
         return null;
     }
