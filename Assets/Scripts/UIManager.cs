@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     #region MENU SETTINGS
     // FADE CANVAS
     [SerializeField] float fadeOutTargetAlpha = 1f;
+    [SerializeField] float fadeInTime = 1f;
     CanvasGroup canvasGroup;
     int nFrames;
     int remainingFrames;
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour
         {
             canvasGroup = GetComponent<CanvasGroup>();
             canvasGroup.alpha = 1f;
+            StartCoroutine(FadeIn(fadeInTime));
         }
         if (currentState == UIstateSelection.OptionsMenu)
         {
