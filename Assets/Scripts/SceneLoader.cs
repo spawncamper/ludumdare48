@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    #region EVENTS
+    [SerializeField] GameEvent LoadDescentLevelEvent;
+    [SerializeField] GameEvent LoadExplorationLevelEvent;
+    [SerializeField] GameEvent LoadMainMenuEvent;
+
+    #endregion
+
     #region VARIABLES
     // Location: on the BOOT object in the boot scene
     [SerializeField] string bootScene;
@@ -76,6 +83,15 @@ public class SceneLoader : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(levelSelection);
+
+        if (levelSelection == exploration)
+        {
+            LoadExplorationLevelEvent.Raise();
+        }
+        else if (levelSelection == descent)
+        {
+            LoadDescentLevelEvent.Raise();
+        }
     }
 
     public void LoadMainMenu()
