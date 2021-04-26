@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] string gameScene;
     [SerializeField] string exploration;
     [SerializeField] string descent;
-    string levelSelection;
+    string levelSelection = "Game";
     [SerializeField] float delay = 1f;
     #endregion
 
@@ -76,7 +76,7 @@ public class SceneLoader : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(gameScene);
+        SceneManager.LoadScene(levelSelection);
     }
 
     public void LoadMainMenu()
