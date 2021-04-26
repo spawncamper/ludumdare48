@@ -28,8 +28,11 @@ public class UIManager : MonoBehaviour
 
     #region MENU SETTINGS
     // FADE CANVAS
-    Animator animator;
-    [SerializeField] float delay = 1f;
+    [SerializeField] float fadeOutTargetAlpha = 1f;
+    CanvasGroup canvasGroup;
+    int nFrames;
+    int remainingFrames;
+    float deltaAlpha;
 
     // CREDITS MENU
     [SerializeField] TMP_Text creditsText;
@@ -45,10 +48,8 @@ public class UIManager : MonoBehaviour
     {
         if (currentState == UIstateSelection.FadeCanvas)
         {
-//            MenuSetActive();
-
-            animator = GetComponentInChildren<Animator>();
-            StartCoroutine(FadeInCoroutine());
+            canvasGroup = GetComponent<CanvasGroup>();
+            canvasGroup.alpha = 1f;
         }
         if (currentState == UIstateSelection.OptionsMenu)
         {
@@ -106,16 +107,30 @@ public class UIManager : MonoBehaviour
 
     #region FADE CANVAS
     // FADE CANVAS
-    IEnumerator FadeInCoroutine()
+    public IEnumerator FadeOut(float fadeOutTime)
     {
-        print("[UIManager] FadeInCoroutine start");
-        
-        animator.enabled = true;
-        yield return new WaitForSeconds(delay);
+        nFrames = Mathf.RoundToInt(fadeOutTime / Time.deltaTime);
+        remainingFrames = nFrames;
+        deltaAlpha = fadeOutTargetAlpha / nFrames;
+        while (remainingFrames > 0)
+        {
+            canvasGroup.alpha += deltaAlpha;
+            remainingFrames--;
+            yield return null;
+        }
+    }
 
-        ChildrenSetActive(false);
-
-        print("[UIManager] FadeInCoroutine finish");
+    public IEnumerator FadeIn(float fadeInTime)
+    {
+        nFrames = Mathf.RoundToInt(fadeInTime / Time.deltaTime);
+        remainingFrames = nFrames;
+        deltaAlpha = fadeOutTargetAlpha / nFrames;
+        while (remainingFrames > 0)
+        {
+            canvasGroup.alpha -= deltaAlpha;
+            remainingFrames--;
+            yield return null;
+        }
     }
     #endregion
 
