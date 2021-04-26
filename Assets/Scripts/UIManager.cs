@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     #region STATE SELECTION
     enum UIstateSelection
     {
-        MainMenu, FadeCanvas, OptionsMenu, CreditsMenu, PauseMenu
+        MainMenu, FadeCanvas, OptionsMenu, CreditsMenu, PauseMenu, DeathText
     }
 
     [SerializeField] UIstateSelection currentState;
@@ -67,6 +67,10 @@ public class UIManager : MonoBehaviour
             MenuSetInactive();
         }
         else if (currentState == UIstateSelection.PauseMenu)
+        {
+            MenuSetInactive();
+        }
+        else if (currentState == UIstateSelection.DeathText)
         {
             MenuSetInactive();
         }
@@ -224,5 +228,13 @@ public class UIManager : MonoBehaviour
     {
         PauseMenuMainMenuEvent.Raise();
     }
+    #endregion
+
+    #region DEATH TEXT
+    public void TurnOnDeathText()
+    {
+        MenuSetActive();
+    }
+
     #endregion
 }
