@@ -1297,27 +1297,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &740940523 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 740940523, guid: 97d0417c210ef6748b2e7358529f61e6, type: 3}
-  m_PrefabInstance: {fileID: 7388094657889406689}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &740940524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740940523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 909cedc141ab00346a2a9a99132aab4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 85d19bc12963e584ba57e55727a4c899, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &748490841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5623212754657646978, guid: e5c8dfb946b493f4d8093ef23c5b1421, type: 3}
@@ -4142,10 +4121,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 875704588, guid: 97d0417c210ef6748b2e7358529f61e6, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2827559655859833440, guid: 97d0417c210ef6748b2e7358529f61e6, type: 3}
       propertyPath: m_Name
       value: UI Master Exploration v2

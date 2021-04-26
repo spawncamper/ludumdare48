@@ -8,7 +8,7 @@ public class TriggerDetector : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (gameObject.tag == "Ruins")
+            if (gameObject.tag == "Ruin")
             {
                 RuinsFoundEvent.Raise();
                 gameObject.SetActive(false);

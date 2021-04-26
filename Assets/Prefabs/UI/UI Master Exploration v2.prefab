@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 740940526}
   - component: {fileID: 740940525}
   - component: {fileID: 740940528}
+  - component: {fileID: 740940529}
   m_Layer: 0
   m_Name: RuinsCanvas
   m_TagString: Untagged
@@ -114,6 +115,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad79f54d3d4585478327d6c57c01da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ruinsDisplay: {fileID: 875704588}
+--- !u!114 &740940529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740940523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 909cedc141ab00346a2a9a99132aab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 85d19bc12963e584ba57e55727a4c899, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 740940528}
+        m_TargetAssemblyTypeName: RuinsManager, Assembly-CSharp
+        m_MethodName: RuinsFoundEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &875704586
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' out of 10'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cdcd1f455d5ff4e49ac2a4b31e01d668, type: 2}
   m_sharedMaterial: {fileID: 71722720230412574, guid: cdcd1f455d5ff4e49ac2a4b31e01d668, type: 2}
