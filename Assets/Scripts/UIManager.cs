@@ -4,13 +4,16 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    #region STATE SELECTION
     enum UIstateSelection
     {
         MainMenu, FadeCanvas, OptionsMenu, CreditsMenu, PauseMenu
     }
 
     [SerializeField] UIstateSelection currentState;
+    #endregion
 
+    #region EVENTS
     //EVENTS
     [SerializeField] GameEvent UIButtonPressEvent;
     [SerializeField] GameEvent MainMenuPlayButtonEvent;
@@ -19,7 +22,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameEvent ESCKeyPressEvent;
     [SerializeField] GameEvent MusicOnOffButtonEvent;
     [SerializeField] GameEvent PauseMenuMainMenuEvent;
+    #endregion
 
+    #region MENU SETTINGS
     // FADE CANVAS
     Animator animator;
     [SerializeField] float delay = 1f;
@@ -31,7 +36,9 @@ public class UIManager : MonoBehaviour
 
     // PAUSE MENU
     bool isPauseMenuOpen = false;
+    #endregion
 
+    #region UNITY GAME LOOP
     private void Start()
     {
         if (currentState == UIstateSelection.FadeCanvas)
@@ -66,7 +73,9 @@ public class UIManager : MonoBehaviour
             ESCKeyPressEvent.Raise();
         }
     }
+    #endregion
 
+    #region GENERAL SHARED METHODS
     // GENERAL SHARED METHODS
     void ChildrenSetActive(bool _bool)
     {
@@ -91,7 +100,9 @@ public class UIManager : MonoBehaviour
     {
         ChildrenSetActive(false);
     }
+    #endregion
 
+    #region FADE CANVAS
     // FADE CANVAS
     IEnumerator FadeInCoroutine()
     {
@@ -104,7 +115,9 @@ public class UIManager : MonoBehaviour
 
         print("[UIManager] FadeInCoroutine finish");
     }
+    #endregion
 
+    #region MAIN MENU
     // MAIN MENU
     public void MainMenuPlayButton()
     {
@@ -120,7 +133,9 @@ public class UIManager : MonoBehaviour
     {
         MainMenuCreditsButtonEvent.Raise();
     }
+    #endregion
 
+    #region OPTIONS MENU
     // OPTIONS MENU
     public void OptionsMenuMusicOnOffButton()
     {
@@ -131,7 +146,9 @@ public class UIManager : MonoBehaviour
             MusicOnOffButtonEvent.Raise();
         }
     }
+    #endregion
 
+    #region CREDITS MENU
     // CREDITS MENU
     public void CreditsMenuDesignButton()
     {
@@ -142,7 +159,9 @@ public class UIManager : MonoBehaviour
     {
         creditsText.text = musicText;
     }
+    #endregion
 
+    #region PAUSE MENU
     // PAUSE MENU
     public void PauseMenuOnESCPress()
     {
@@ -169,4 +188,5 @@ public class UIManager : MonoBehaviour
     {
         PauseMenuMainMenuEvent.Raise();
     }
+    #endregion
 }

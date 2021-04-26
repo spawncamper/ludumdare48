@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    #region VARIABLES
     [SerializeField] int worldSize = 10;
     [SerializeField] float tileHeight = 1f;
     [SerializeField] int tilePoolSize;
@@ -15,12 +16,16 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] float offsetMax = 20f;
 
     float zeroPosition;
+    #endregion
 
+    #region GAME OBJECTS
     GameObject[] tilePool;
     GameObject[] minePool;
 
     GameObject player;
+    #endregion
 
+    #region UNITY GAME LOOP
     private void Awake()
     {
         tilePool = PopulatePool(tilePoolSize, tilePrefabs);
@@ -56,7 +61,9 @@ public class LevelGenerator : MonoBehaviour
             UpdateTilePositions(zeroPosition);
         }
     }
+    #endregion
 
+    #region TILES
     void UpdateTilePositions(float zeroPosition)
     {
         foreach (GameObject tile in tilePool)
@@ -76,7 +83,9 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region MINES
     void SpawnMine(float _zeroPosition)
     {
         float spawnChance = Random.Range(0, 100);
@@ -89,7 +98,9 @@ public class LevelGenerator : MonoBehaviour
             EnableObjectInPool(minePool, xOffset, Mathf.Round(_zeroPosition - tileHeight * worldSize), zOffset);
         }
     }
+    #endregion
 
+    #region OBJECT POOLING
     GameObject[] PopulatePool(int _poolSize, GameObject[] prefabs)
     {
         //Create the pool
@@ -126,4 +137,5 @@ public class LevelGenerator : MonoBehaviour
 
         return null;
     }
+    #endregion
 }
