@@ -8,7 +8,11 @@ public class TriggerDetector : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            RuinsFoundEvent.Raise();
+            if (gameObject.tag == "Ruins")
+            {
+                RuinsFoundEvent.Raise();
+                gameObject.SetActive(false);
+            }
         }
     }
 }
