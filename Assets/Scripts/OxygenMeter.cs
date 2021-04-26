@@ -9,6 +9,7 @@ public class OxygenMeter : MonoBehaviour
 
     [SerializeField] int initialO2 = 100;
     [SerializeField] int o2DepletionRate = 2;
+    [SerializeField] int rockCollision = 10;
 
     [SerializeField] float restartDelay = 3f;
 
@@ -49,5 +50,10 @@ public class OxygenMeter : MonoBehaviour
                 PlayerDeathEvent.Raise();
             }
         }
+    }
+
+    public void CollisionRockEvent()
+    {
+        slider.value -= rockCollision;
     }
 }

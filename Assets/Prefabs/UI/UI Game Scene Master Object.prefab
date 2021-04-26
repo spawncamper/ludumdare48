@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1703418221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736179821574491852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 909cedc141ab00346a2a9a99132aab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2173eb9045ee96e4da8668706ec0a25d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4736179821574491841}
+        m_TargetAssemblyTypeName: OxygenMeter, Assembly-CSharp
+        m_MethodName: CollisionRockEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4736179821785782435
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4736179821785782432}
   m_Layer: 0
-  m_Name: UI Master Object
+  m_Name: UI Game Scene Master Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,11 +179,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44a6c669374c1b429c4854271391ca3, type: 3}
+--- !u!1 &4736179821574491852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5799761505854402091, guid: f44a6c669374c1b429c4854271391ca3, type: 3}
+  m_PrefabInstance: {fileID: 1280902631446651111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4736179821574491853 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5799761505854402090, guid: f44a6c669374c1b429c4854271391ca3, type: 3}
   m_PrefabInstance: {fileID: 1280902631446651111}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4736179821574491841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5799761505854402086, guid: f44a6c669374c1b429c4854271391ca3, type: 3}
+  m_PrefabInstance: {fileID: 1280902631446651111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736179821574491852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785fd30df61db1a4a80b293fe351a989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4736179820255442573
 PrefabInstance:
   m_ObjectHideFlags: 0

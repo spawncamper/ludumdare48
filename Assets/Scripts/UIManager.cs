@@ -75,6 +75,10 @@ public class UIManager : MonoBehaviour
         {
             MenuSetInactive();
         }
+        else if (currentState == UIstateSelection.TutorialMenu)
+        {
+            MenuSetInactive();
+        }
     }
 
     private void Update()
@@ -104,7 +108,6 @@ public class UIManager : MonoBehaviour
     {
         UIButtonPressEvent.Raise();
     }
-
 
     public void MenuSetActive()
     {
@@ -177,7 +180,6 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region OPTIONS MENU
-    // OPTIONS MENU
     public void OptionsMenuMusicOnOffButton()
     {
         UIButtonPressEvent.Raise();
@@ -190,7 +192,6 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region CREDITS MENU
-    // CREDITS MENU
     public void CreditsMenuDesignButton()
     {
         creditsText.text = designText;
@@ -211,7 +212,6 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region PAUSE MENU
-    // PAUSE MENU
     public void PauseMenuOnESCPress()
     {
         if (isPauseMenuOpen == false && currentState == UIstateSelection.PauseMenu)

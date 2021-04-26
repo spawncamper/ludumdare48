@@ -14,6 +14,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8615335534318706189, guid: 4a417ee44263a467f8a289f88b734545, type: 3}
+--- !u!114 &2018935087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191890497238638990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cce1334b8c7d648ab26d7e85415912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionRockEvent: {fileID: 11400000, guid: 2173eb9045ee96e4da8668706ec0a25d, type: 2}
 --- !u!1 &5188600793271363350
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,7 +52,7 @@ Transform:
   m_GameObject: {fileID: 5188600793271363350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 53.4462, y: 25.979048, z: 33.062805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6118, y: 1.6118, z: 1.6118}
   m_Children:
   - {fileID: 8657269396205118528}
   m_Father: {fileID: 0}

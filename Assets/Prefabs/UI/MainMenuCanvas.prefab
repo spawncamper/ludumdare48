@@ -1475,7 +1475,7 @@ MonoBehaviour:
   MainMenuOptionsButtonEvent: {fileID: 11400000, guid: 40d1b574e6a733a42b2f2be3660b3a99, type: 2}
   MainMenuCreditsButtonEvent: {fileID: 11400000, guid: be13d308b9161634a9aaafce9ae33cdf, type: 2}
   MainMenuExploratEvent: {fileID: 11400000, guid: 44fa82f5df90e2848885a738a0fe56c4, type: 2}
-  MenuMainTutorialButtonEvent: {fileID: 0}
+  MenuMainTutorialButtonEvent: {fileID: 11400000, guid: 47e037795a811c84aa20be0e3dc07ed8, type: 2}
   MainMenuInfDescentEvent: {fileID: 11400000, guid: 1b29905c30e8d714a8f33a9d264597b2, type: 2}
   ESCKeyPressEvent: {fileID: 0}
   MusicOnOffButtonEvent: {fileID: 0}
@@ -1665,6 +1665,18 @@ MonoBehaviour:
       - m_Target: {fileID: 9079716970509162416}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: UIButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9079716970509162416}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: MainMenuTutorialButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
