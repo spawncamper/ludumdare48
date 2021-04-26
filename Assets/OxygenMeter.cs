@@ -19,6 +19,8 @@ public class OxygenMeter : MonoBehaviour
     // Update is called once per frame
     IEnumerator Start()
     {
+        print("[OxygenMeter] IEnumerator Start() level Started");
+        
         slider = GetComponentInChildren<Slider>();
 
         slider.value = initialO2;
@@ -26,6 +28,8 @@ public class OxygenMeter : MonoBehaviour
         yield return StartCoroutine(GameLoop());
 
         yield return new WaitForSeconds(restartDelay);
+
+        playerAlive = true;
 
         GameOverEvent.Raise();
     }
@@ -43,8 +47,6 @@ public class OxygenMeter : MonoBehaviour
                 playerAlive = false;
 
                 PlayerDeathEvent.Raise();
-
-                Time.timeScale = 0;
             }
         }
     }

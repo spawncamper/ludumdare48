@@ -90,7 +90,15 @@ public class SceneLoader : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StopAllCoroutines();
+        
+        Time.timeScale = 1;
+
+        print("[Sceneloader] RestartLevel point 1");
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+
+        print("[Sceneloader] RestartLevel point 2");
     }
 
     public void StartGame()

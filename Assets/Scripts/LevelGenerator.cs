@@ -145,7 +145,7 @@ public class LevelGenerator : MonoBehaviour
                 _Pool[i].transform.position = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
                 _Pool[i].SetActive(true);
 
-                print(i + _Pool[i].transform.position.y);
+//                print(i + _Pool[i].transform.position.y);
 
                 return _Pool[i];
             }
