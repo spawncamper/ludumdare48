@@ -45,23 +45,28 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region UNITY GAME LOOP
-    private void Start()
+    private void OnEnable()
     {
         if (currentState == UIstateSelection.FadeCanvas)
         {
+            MenuSetActive();
             canvasGroup = GetComponent<CanvasGroup>();
             canvasGroup.alpha = 1f;
             StartCoroutine(FadeIn(fadeInTime));
         }
+    }
+
+    private void Start()
+    {
         if (currentState == UIstateSelection.OptionsMenu)
         {
             MenuSetInactive();
         }
-        if (currentState == UIstateSelection.CreditsMenu)
+        else if (currentState == UIstateSelection.CreditsMenu)
         {
             MenuSetInactive();
         }
-        if (currentState == UIstateSelection.PauseMenu)
+        else if (currentState == UIstateSelection.PauseMenu)
         {
             MenuSetInactive();
         }
@@ -133,6 +138,8 @@ public class UIManager : MonoBehaviour
             remainingFrames--;
             yield return null;
         }
+
+        MenuSetInactive();
     }
     #endregion
 

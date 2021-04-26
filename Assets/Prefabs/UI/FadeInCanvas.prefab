@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 4620502903686367235}
   - component: {fileID: 4620502903686367261}
   - component: {fileID: 4620502903686367234}
-  - component: {fileID: 4620502903686367260}
   m_Layer: 5
   m_Name: FadeInImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4620502903686367235
 RectTransform:
   m_ObjectHideFlags: 0
@@ -76,25 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &4620502903686367260
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4620502903686367232}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54649b29238984b48af971df153c47a9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4620502904370648909
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4620502904370648905}
   - component: {fileID: 4620502904370648910}
+  - component: {fileID: 5273381694502637529}
   - component: {fileID: 4620502904370648911}
   - component: {fileID: 4620502904370648908}
   - component: {fileID: 4620502904370648904}
@@ -156,6 +137,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &5273381694502637529
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4620502904370648909}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &4620502904370648911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +206,11 @@ MonoBehaviour:
   MainMenuPlayButtonEvent: {fileID: 0}
   MainMenuOptionsButtonEvent: {fileID: 0}
   MainMenuCreditsButtonEvent: {fileID: 0}
+  MainMenuExploratEvent: {fileID: 0}
+  MainMenuInfDescentEvent: {fileID: 0}
   ESCKeyPressEvent: {fileID: 0}
   MusicOnOffButtonEvent: {fileID: 0}
-  delay: 1
+  PauseMenuMainMenuEvent: {fileID: 0}
+  fadeOutTargetAlpha: 1
+  fadeInTime: 1
   creditsText: {fileID: 0}

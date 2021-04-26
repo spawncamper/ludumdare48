@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4620502904370648909, guid: 939f9deec42bde9409dd0e65a2869fde, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 939f9deec42bde9409dd0e65a2869fde, type: 3}
@@ -1792,7 +1792,8 @@ MonoBehaviour:
   ESCKeyPressEvent: {fileID: 11400000, guid: aa13534da9446b94f885de8bb1d1540e, type: 2}
   MusicOnOffButtonEvent: {fileID: 11400000, guid: d5e87db5495474d4bb7611bf7bdcc32b, type: 2}
   PauseMenuMainMenuEvent: {fileID: 11400000, guid: d44024bda48353443b24c03a9cff00ec, type: 2}
-  delay: 1
+  fadeOutTargetAlpha: 1
+  fadeInTime: 1
   creditsText: {fileID: 0}
 --- !u!1 &4163975218221855539
 GameObject:
