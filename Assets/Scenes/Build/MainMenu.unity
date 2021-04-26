@@ -409,10 +409,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreditsPopUpMenuCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5191139441009938196, guid: e1b6c93cf65cb1e47abf8f0b5843a075, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5191139441023811764, guid: e1b6c93cf65cb1e47abf8f0b5843a075, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -606,10 +602,6 @@ PrefabInstance:
     - target: {fileID: 6376265136905697175, guid: 5056ee9cc7c8ad245aca5ad0331cd9e7, type: 3}
       propertyPath: m_Name
       value: OptionsPopUpMenuCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6376265136905697175, guid: 5056ee9cc7c8ad245aca5ad0331cd9e7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6376265136917510199, guid: 5056ee9cc7c8ad245aca5ad0331cd9e7, type: 3}
       propertyPath: m_Pivot.x

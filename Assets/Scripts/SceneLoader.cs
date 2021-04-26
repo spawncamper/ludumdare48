@@ -45,11 +45,24 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator OpenMainMenuFromBoot()
     {
-        LoadLevelAsync(mainMenu);
+        LoadMainMenu();
         Debug.Log("[SceneLoader] OpenMainMenuFromBoot ()");
         yield return new WaitForSeconds(delay);
     }
     #endregion
+
+    private void Update()
+    {
+        // Exit game from Main menu on application quit
+        if (Input.GetKeyDown("escape") && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            // other application quit stuff
+
+            print("[SceneLoader] Update() Application.Quit()");
+
+            Application.Quit();
+        }
+    }
 
     public void LoadLevelAsync(string levelName)
     {
