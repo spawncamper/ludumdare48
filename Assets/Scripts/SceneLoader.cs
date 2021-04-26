@@ -8,10 +8,9 @@ public class SceneLoader : MonoBehaviour
     // Location: on the BOOT object in the boot scene
     [SerializeField] string bootScene;
     [SerializeField] string mainMenu;
-    [SerializeField] string gameScene;
     [SerializeField] string exploration;
     [SerializeField] string descent;
-    string levelSelection = "Game";
+    string levelSelection = "Descent";
     [SerializeField] float delay = 1f;
     #endregion
 

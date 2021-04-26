@@ -203,8 +203,8 @@ MonoBehaviour:
   bootScene: Boot
   mainMenu: MainMenu
   gameScene: Game
-  exploration: 
-  descent: 
+  exploration: Exploration
+  descent: Descent
   delay: 1
 --- !u!114 &2104097481
 MonoBehaviour:

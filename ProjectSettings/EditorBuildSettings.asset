@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Build/Descent.unity
     guid: a6c4a79614a8eda429a8e69433d6978a
+  - enabled: 1
+    path: Assets/Scenes/Build/Exploration.unity
+    guid: 506e3c176af25b84081a6c1d0b83b9c3
   m_configObjects: {}
