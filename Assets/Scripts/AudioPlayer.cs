@@ -41,7 +41,7 @@ public class AudioPlayer : MonoBehaviour
     public void LoadMainMenuEvent()
     {
         audioSource.clip = mainMenuMusic;
-        audioSource.volume = 1f;
+        audioSource.volume = 0.5f;
         audioSource.Play();
     }
 
@@ -55,7 +55,7 @@ public class AudioPlayer : MonoBehaviour
     public void LoadDescentLevelEvent()
     {
         audioSource.clip = descentLevelMusic;
-        audioSource.volume = 0.5f;
+        audioSource.volume = 0.10f;
         audioSource.Play();
     }
 }
