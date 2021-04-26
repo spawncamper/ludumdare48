@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 300
-  altitudeSpeed: 300
+  altitudeSpeed: 700
   rotationSpeed: 150
   waterLiftForce: {x: 0, y: 460, z: 0}
   selfRightingTorque: 0.75

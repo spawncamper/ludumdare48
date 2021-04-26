@@ -17,7 +17,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] string mainMenu;
     [SerializeField] string exploration;
     [SerializeField] string descent;
-    string levelSelection = "Descent";
+    string levelSelection = "Exploration";
     [SerializeField] float delay = 1f;
     #endregion
 

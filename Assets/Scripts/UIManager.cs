@@ -43,6 +43,9 @@ public class UIManager : MonoBehaviour
 
     // PAUSE MENU
     bool isPauseMenuOpen = false;
+
+    // GAME OVER MENU
+    [SerializeField] TMP_Text deathText;
     #endregion
 
     #region UNITY GAME LOOP
@@ -73,7 +76,7 @@ public class UIManager : MonoBehaviour
         }
         else if (currentState == UIstateSelection.DeathText)
         {
-            MenuSetInactive();
+            deathText.text = "";
         }
         else if (currentState == UIstateSelection.TutorialMenu)
         {
@@ -242,8 +245,12 @@ public class UIManager : MonoBehaviour
     #region DEATH TEXT
     public void TurnOnDeathText()
     {
-        MenuSetActive();
+        deathText.text = "YOU HAVE GONE TOO DEEP TRY AGAIN";
     }
 
+    public void GameWonEvent()
+    {
+        deathText.text = "YOU HAVE WON THIS TIME";
+    }
     #endregion
 }

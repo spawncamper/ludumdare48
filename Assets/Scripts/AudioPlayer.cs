@@ -3,6 +3,7 @@ using UnityEngine;
 public class AudioPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip menuButtonClick;
+    [SerializeField] AudioClip ding;
     [SerializeField] AudioClip mainMenuMusic;
     [SerializeField] AudioClip descentLevelMusic;
     [SerializeField] AudioClip explorationlevelMusic;

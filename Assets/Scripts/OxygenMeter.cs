@@ -56,4 +56,9 @@ public class OxygenMeter : MonoBehaviour
     {
         slider.value -= rockCollision;
     }
+
+    public void RuinFoundEvent()
+    {
+        slider.value = 100;
+    }
 }

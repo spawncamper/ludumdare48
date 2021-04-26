@@ -4,13 +4,14 @@ using TMPro;
 
 public class RuinsManager : MonoBehaviour
 {
+    [SerializeField] GameEvent AllRuinsFound;
+    
     [SerializeField] TMP_Text ruinsDisplay;
 
     List<GameObject> ruinsList = new List<GameObject>();
 
-    int ruinLeft;
     int initialCount;
-    int ruinsFound;
+    int ruinsFound = 0;
 
     private void Start()
     {
@@ -18,7 +19,6 @@ public class RuinsManager : MonoBehaviour
 
         ruinsList.AddRange(GameObject.FindGameObjectsWithTag("Ruin"));
 
-        ruinLeft = ruinsList.Count;
         initialCount = ruinsList.Count;
 
         ruinsDisplay.text = 0 + " OUT OF " + initialCount;
@@ -26,12 +26,13 @@ public class RuinsManager : MonoBehaviour
 
     public void RuinsFoundEvent()
     {
-        foreach (GameObject ruin in ruinsList)
-        {
-            ruinLeft--;
-            ruinsFound = initialCount - ruinLeft;
-        }
+        ruinsFound++;
 
         ruinsDisplay.text = ruinsFound + " OUT OF " + initialCount;
+
+        if (ruinsFound == initialCount)
+        {
+            AllRuinsFound.Raise();
+        }
     }
 }
