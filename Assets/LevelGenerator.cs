@@ -18,6 +18,8 @@ public class LevelGenerator : MonoBehaviour
     float zeroPosition;
     #endregion
 
+    [SerializeField] GameEvent MineSpawnedEvent;
+
     #region GAME OBJECTS
     GameObject[] tilePool;
     GameObject[] minePool;
@@ -80,6 +82,7 @@ public class LevelGenerator : MonoBehaviour
 
                 //Spawn a mine at the bottom
                 SpawnMine(zeroPosition);
+                MineSpawnedEvent.Raise();
             }
         }
     }
@@ -96,6 +99,21 @@ public class LevelGenerator : MonoBehaviour
         if (spawnChance < mineSpawnChance)
         {
             EnableObjectInPool(minePool, xOffset, Mathf.Round(_zeroPosition - tileHeight * worldSize), zOffset);
+        }
+    }
+
+    //Called by MineSpawnedEvent
+    public void UpdateMines()
+    {
+        foreach (GameObject mine in minePool)
+        {
+            float distanceToPlayer = player.transform.position.y - mine.transform.position.y;
+
+            if (distanceToPlayer < 0 && mine.activeInHierarchy)
+            {
+                // Disable the topmost tile
+                mine.SetActive(false);
+            }
         }
     }
     #endregion
