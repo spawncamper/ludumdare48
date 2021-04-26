@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281818877
-  m_fontColor: {r: 0.99215686, g: 0.36862746, b: 0.21568628, a: 1}
+    rgba: 4279900925
+  m_fontColor: {r: 0.99215686, g: 0.101960786, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281818877
-  m_fontColor: {r: 0.99215686, g: 0.36862746, b: 0.21568628, a: 1}
+    rgba: 4279900925
+  m_fontColor: {r: 0.99215686, g: 0.101960786, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281818877
-  m_fontColor: {r: 0.99215686, g: 0.36862746, b: 0.21568628, a: 1}
+    rgba: 4279900925
+  m_fontColor: {r: 0.99215686, g: 0.101960786, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -700,8 +700,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281818877
-  m_fontColor: {r: 0.99215686, g: 0.36862746, b: 0.21568628, a: 1}
+    rgba: 4279900925
+  m_fontColor: {r: 0.99215686, g: 0.101960786, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -874,7 +874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5191139441023811764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -968,12 +968,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa686a85b1caafd4abc8c4eed0fc5130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 3
+  currentState: 6
   UIButtonPressEvent: {fileID: 11400000, guid: 8b51720ec87a088438695a0420989399, type: 2}
   MainMenuPlayButtonEvent: {fileID: 0}
   MainMenuOptionsButtonEvent: {fileID: 0}
   MainMenuCreditsButtonEvent: {fileID: 0}
   MainMenuExploratEvent: {fileID: 0}
+  MenuMainTutorialButtonEvent: {fileID: 0}
   MainMenuInfDescentEvent: {fileID: 0}
   ESCKeyPressEvent: {fileID: 11400000, guid: aa13534da9446b94f885de8bb1d1540e, type: 2}
   MusicOnOffButtonEvent: {fileID: 0}
@@ -993,7 +994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909cedc141ab00346a2a9a99132aab4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: be13d308b9161634a9aaafce9ae33cdf, type: 2}
+  gameEvent: {fileID: 11400000, guid: 47e037795a811c84aa20be0e3dc07ed8, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -1187,8 +1188,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281818877
-  m_fontColor: {r: 0.99215686, g: 0.36862746, b: 0.21568628, a: 1}
+    rgba: 4279900925
+  m_fontColor: {r: 0.99215686, g: 0.101960786, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1321,8 +1322,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281818877
-  m_fontColor: {r: 0.99215686, g: 0.36862746, b: 0.21568628, a: 1}
+    rgba: 4279900925
+  m_fontColor: {r: 0.99215686, g: 0.101960786, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1532,8 +1533,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281818877
-  m_fontColor: {r: 0.99215686, g: 0.36862746, b: 0.21568628, a: 1}
+    rgba: 4279900925
+  m_fontColor: {r: 0.99215686, g: 0.101960786, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

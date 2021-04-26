@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     #region STATE SELECTION
     enum UIstateSelection
     {
-        MainMenu, FadeCanvas, OptionsMenu, CreditsMenu, PauseMenu, DeathText
+        MainMenu, FadeCanvas, OptionsMenu, CreditsMenu, PauseMenu, DeathText, TutorialMenu
     }
 
     [SerializeField] UIstateSelection currentState;
@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameEvent MainMenuOptionsButtonEvent;
     [SerializeField] GameEvent MainMenuCreditsButtonEvent;
     [SerializeField] GameEvent MainMenuExploratEvent;
+    [SerializeField] GameEvent MenuMainTutorialButtonEvent;
     [SerializeField] GameEvent MainMenuInfDescentEvent;
     [SerializeField] GameEvent ESCKeyPressEvent;
     [SerializeField] GameEvent MusicOnOffButtonEvent;
@@ -199,6 +200,14 @@ public class UIManager : MonoBehaviour
     {
         creditsText.text = musicText;
     }
+    #endregion
+
+    #region TUTORIAL MENU
+    public void MainMenuTutorialButton()
+    {
+        MenuMainTutorialButtonEvent.Raise();
+    }
+
     #endregion
 
     #region PAUSE MENU
