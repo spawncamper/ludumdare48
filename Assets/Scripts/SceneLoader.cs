@@ -4,17 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    #region VARIABLES
     // Location: on the BOOT object in the boot scene
     [SerializeField] string bootScene;
     [SerializeField] string mainMenu;
     [SerializeField] string gameScene;
-    string activeScene;
+    [SerializeField] string exploration;
+    [SerializeField] string descent;
+    string levelSelection;
     [SerializeField] float delay = 1f;
+    #endregion
 
     Scene[] loadedScenes;
 
     public static SceneLoader Instance;
 
+    #region ON BOOT
     private void Awake()
     {
         if (Instance == null)
@@ -38,6 +43,7 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("[SceneLoader] OpenMainMenuFromBoot ()");
         yield return new WaitForSeconds(delay);
     }
+    #endregion
 
     public void LoadLevelAsync(string levelName)
     {
@@ -77,6 +83,16 @@ public class SceneLoader : MonoBehaviour
     {
         print("[SceneLoader] LoadMainMenu()");
         SceneManager.LoadScene(mainMenu);
+    }
+
+    public void MainMenuExplorationSelection()
+    {
+        levelSelection = exploration;
+    }
+
+    public void MainMenuDescentSelection()
+    {
+        levelSelection = descent;
     }
 
     public Scene[] GetOpenScenes()

@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameEvent MainMenuPlayButtonEvent;
     [SerializeField] GameEvent MainMenuOptionsButtonEvent;
     [SerializeField] GameEvent MainMenuCreditsButtonEvent;
+    [SerializeField] GameEvent MainMenuExploratEvent;
+    [SerializeField] GameEvent MainMenuInfDescentEvent;
     [SerializeField] GameEvent ESCKeyPressEvent;
     [SerializeField] GameEvent MusicOnOffButtonEvent;
     [SerializeField] GameEvent PauseMenuMainMenuEvent;
@@ -132,6 +134,16 @@ public class UIManager : MonoBehaviour
     public void MainMenuCreditsButton()
     {
         MainMenuCreditsButtonEvent.Raise();
+    }
+
+    public void MainMenuInfDescentSelection()
+    {
+        MainMenuInfDescentEvent.Raise();
+    }
+
+    public void MainMenuExploratSelection()
+    {
+        MainMenuExploratEvent.Raise();
     }
     #endregion
 
