@@ -39,16 +39,14 @@ public class SceneLoader : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
-
-        StartCoroutine(OpenMainMenuFromBoot());
     }
 
-    IEnumerator OpenMainMenuFromBoot()
+    private void Start()
     {
-        LoadMainMenu();
+        LoadLevelAsync("MainMenu");
         Debug.Log("[SceneLoader] OpenMainMenuFromBoot ()");
-        yield return new WaitForSeconds(delay);
     }
+
     #endregion
 
     private void Update()
