@@ -22,6 +22,11 @@ public class AudioPlayer : MonoBehaviour
         audioSource.PlayOneShot(menuButtonClick);
     }
 
+    public void PlayOneShotRuinFound()
+    {
+        audioSource.PlayOneShot(ding);
+    }
+
     public void OptionsMenuMusicOnOffButton()
     {
         if (isMusicOn == false)
@@ -42,21 +47,21 @@ public class AudioPlayer : MonoBehaviour
     public void LoadMainMenuEvent()
     {
         audioSource.clip = mainMenuMusic;
-        audioSource.volume = 0.5f;
+        audioSource.volume = 1f;
         audioSource.Play();
     }
 
     public void LoadExploratLevelEvent()
     {
-        audioSource.clip = explorationlevelMusic;
-        audioSource.volume = 1f;
+        audioSource.clip = descentLevelMusic;
+        audioSource.volume = 0.2f;
         audioSource.Play();
     }
 
     public void LoadDescentLevelEvent()
     {
         audioSource.clip = descentLevelMusic;
-        audioSource.volume = 0.10f;
+        audioSource.volume = 0.20f;
         audioSource.Play();
     }
 }

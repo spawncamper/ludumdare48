@@ -405,6 +405,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3960131205839454039, guid: ddac970c06cd6ea48adabda543a0826d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960131207332019820, guid: ddac970c06cd6ea48adabda543a0826d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5256989545783689150, guid: ddac970c06cd6ea48adabda543a0826d, type: 3}
       propertyPath: m_Name
       value: UI Main Menu Master Object
@@ -451,6 +459,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5256989545783689151, guid: ddac970c06cd6ea48adabda543a0826d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256989546432238195, guid: ddac970c06cd6ea48adabda543a0826d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256989546432238196, guid: ddac970c06cd6ea48adabda543a0826d, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

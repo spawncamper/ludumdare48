@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuButtonClick: {fileID: 8300000, guid: 8203ff6a784c011469739e959d3fb1cf, type: 3}
-  ding: {fileID: 0}
+  ding: {fileID: 8300000, guid: 349c382578ace734290342bb3463904e, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: df2163357df38064e856403cc854d3db, type: 3}
   descentLevelMusic: {fileID: 8300000, guid: 65adb1d082c55374db2ded271fa1c31f, type: 3}
   explorationlevelMusic: {fileID: 8300000, guid: bfb918df73de10442841732eb0044f20, type: 3}
@@ -649,4 +649,16 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: 85d19bc12963e584ba57e55727a4c899, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2104097478}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayOneShotRuinFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
